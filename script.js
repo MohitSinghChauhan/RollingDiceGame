@@ -42,7 +42,7 @@ btnRoll.addEventListener('click', function () {
 
         // Generating Random Dice Roll
         let dice = Math.trunc(Math.random() * 6) + 1;
-        console.log(typeof dice);
+        // console.log(typeof dice);
 
         // DIsplaying Dice image
         diceEl.classList.remove('hidden');
@@ -135,4 +135,42 @@ btnNew.addEventListener('click', function () {
     diceEl.classList.add('hidden');
 
 })
+
+
+// Modal Functionality
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnOpenModal = document.querySelectorAll('.show-modal');
+const btnCloseModal = document.querySelector('.close-modal');
+
+const openModal = function () {
+    console.log('clicked')
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+const closeModal = function () {
+    console.log('clicked')
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+
+
+for (let i = 0; i < btnOpenModal.length; i++) {
+
+    btnOpenModal[i].addEventListener('click', openModal)
+    btnCloseModal.addEventListener('click', closeModal)
+    overlay.addEventListener('click', closeModal)
+    console.log(i);
+
+}
+
+document.addEventListener("keydown", function (e) {
+    if (e.key == "Escape" && !modal.classList.contains('hidden')){
+        closeModal();
+    }
+})
+
 
