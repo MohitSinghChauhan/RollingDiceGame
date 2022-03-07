@@ -90,7 +90,7 @@ btnHold.addEventListener('click', function () {
 
         //Displaying Global score of active player
         document.getElementById(`score--${activePlayer}`).textContent = score[activePlayer];
-        console.log(`score--${activePlayer}`)
+        // console.log(`score--${activePlayer}`)
 
         //Check if Global Score >=100 then set isPlaying to false and declare that player Winner
         if (score[activePlayer] >= 100) {
@@ -141,7 +141,7 @@ btnNew.addEventListener('click', function () {
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
-const btnOpenModal = document.querySelectorAll('.show-modal');
+const btnOpenModal = document.querySelector('.show-modal');
 const btnCloseModal = document.querySelector('.close-modal');
 
 const openModal = function () {
@@ -156,16 +156,10 @@ const closeModal = function () {
     overlay.classList.add('hidden');
 }
 
+btnOpenModal.addEventListener('click', openModal)
+btnCloseModal.addEventListener('click', closeModal)
+overlay.addEventListener('click', closeModal)
 
-
-for (let i = 0; i < btnOpenModal.length; i++) {
-
-    btnOpenModal[i].addEventListener('click', openModal)
-    btnCloseModal.addEventListener('click', closeModal)
-    overlay.addEventListener('click', closeModal)
-    console.log(i);
-
-}
 
 document.addEventListener("keydown", function (e) {
     if (e.key == "Escape" && !modal.classList.contains('hidden')){
@@ -174,3 +168,18 @@ document.addEventListener("keydown", function (e) {
 })
 
 
+
+
+
+
+
+// const btnOpenModal = document.querySelectorAll('.show-modal');
+
+// for (let i = 0; i < btnOpenModal.length; i++) {
+    
+//     btnOpenModal[i].addEventListener('click', openModal)
+//     btnCloseModal.addEventListener('click', closeModal)
+//     overlay.addEventListener('click', closeModal)
+//     console.log(i);
+    
+// }
