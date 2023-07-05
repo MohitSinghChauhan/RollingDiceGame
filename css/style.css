@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 400;
   height: 100vh;
   color: #333;
@@ -25,7 +25,6 @@ body {
 
 /* LAYOUT */
 
- 
 main {
   position: relative;
   width: 90rem;
@@ -176,7 +175,6 @@ main {
 /* Modal Functionality */
 
 .show-modal {
- 
   cursor: pointer;
 }
 
@@ -190,7 +188,6 @@ main {
   border: none;
   background: none;
 }
-
 
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
@@ -232,7 +229,7 @@ main {
   color: #fff;
   font-size: 30px;
   text-align: center;
-  font-family: "Courier";
+  font-family: 'Courier';
   font-weight: 600;
   outline: none;
   cursor: pointer;
@@ -341,5 +338,3 @@ main {
 .button:hover span {
   animation-play-state: paused;
 }
-
-
