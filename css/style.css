@@ -237,36 +237,105 @@ main {
   main {
     flex-direction: column-reverse;
     width: 70%;
-    height: 80%;
+    height: 90%;
   }
 
   .player {
     /* transform: scaleY(-1); */
-    height: 40%;
-    padding: 4rem;
+    height: 50%;
+    padding: 5rem;
     font-weight: bold;
   }
 
-  .name{
+  .name {
     margin-bottom: -1rem;
   }
-  
-  .score{
+
+  .score {
     margin-bottom: 0;
     font-size: 40px;
   }
 
-  .player--1{
+  .player--1 {
     transform: scaleY(-1) scaleX(-1);
-
   }
 
-  .name{
+  .name {
     font-size: 2rem;
   }
 
-  button, .current{
+  .current {
+    width: 120px;
+    padding: 0.75rem;
+  }
+  .current-score,
+  .current-label {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    display: inline;
+    padding: 5px;
+  }
+
+  button {
     display: none;
   }
 
+  .btn--new {
+    display: block;
+    font-size: 1.5rem;
+    transform: rotate(270deg);
+    top: 48%;
+    left: -6rem;
+  }
+
+  .btn::first-letter {
+    font-size: 2rem;
+    /* display: inline-block; */
+    margin-right: 0rem;
+  }
+
+  .btn {
+    width: 150px;
+    font-size: 1.rem;
+    padding: 1px 0px;
+    /* height: 32px; */
+  }
+
+  .btn--new:active {
+    transform: translateX(3px) rotate(270deg);
+  }
+
+  .btn--roll.player--0 {
+    display: block;
+    top: 53rem;
+  }
+  .btn--roll.player--1 {
+    display: block;
+    top: 7rem;
+    left: 25%;
+  }
+  .btn--roll.player--1:active {
+    transform: rotate(180deg) translateY(3px);
+  }
+
+  .btn--hold.player--0 {
+    display: block;
+    width: 130px;
+    top: 57rem;
+    left: 49%;
+  }
+  .btn--hold.player--1 {
+    display: block;
+    width: 130px;
+    top: 57rem;
+    left: 28%;
+    top: 3rem;
+  }
+
+  .dice {
+    width: 50px;
+    height: 50px;
+    top: 45%;
+    left: 50%;
+  }
 }
