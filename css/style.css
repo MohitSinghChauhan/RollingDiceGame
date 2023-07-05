@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 50%;
   box-sizing: border-box;
 }
 
@@ -27,8 +27,8 @@ body {
 
 main {
   position: relative;
-  width: 90rem;
-  height: 60rem;
+  width: 75rem;
+  height: 55rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -50,7 +50,7 @@ main {
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -59,7 +59,7 @@ main {
 }
 
 .score {
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 300;
   color: #c7365f;
   margin-bottom: auto;
@@ -115,11 +115,9 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
@@ -218,123 +216,126 @@ main {
   z-index: 5;
 }
 
-/* Button animation taken from Codepen.io */
-
-/* Button Starts */
 .i-btn {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(to left top, #c32c71 50%, #b33771 50%);
-  border-style: none;
+  border-radius: 10px;
   color: #fff;
-  font-size: 30px;
+  font-size: 2rem;
   text-align: center;
-  font-family: 'Courier';
   font-weight: 600;
-  outline: none;
   cursor: pointer;
-  position: relative;
   padding: 10px 15px;
   overflow: hidden;
-  transition: all 0.5s;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-  display: flex;
-  top: 2%;
+  top: 4%;
   left: 2%;
+  background: #b6235b;
   position: absolute;
-}
-/* Button Ends */
-
-/* Animations */
-
-.button span {
-  position: absolute;
-  display: block;
-}
-.button span:nth-child(1) {
-  height: 3px;
-  width: 200px;
-  top: 0px;
-  left: -200px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f6e58d);
-  border-top-right-radius: 1px;
-  border-bottom-right-radius: 1px;
-  animation: span1 2s linear infinite;
-  animation-delay: 1s;
+  border: 1px solid #100712;
 }
 
-@keyframes span1 {
-  0% {
-    left: -200px;
+/*  for mobile devices */
+@media screen and (max-width: 500px) {
+  main {
+    flex-direction: column-reverse;
+    width: 70%;
+    height: 90%;
   }
-  100% {
-    left: 200px;
-  }
-}
-.button span:nth-child(2) {
-  height: 70px;
-  width: 3px;
-  top: -70px;
-  right: 0px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #f6e58d);
-  border-bottom-left-radius: 1px;
-  border-bottom-right-radius: 1px;
-  animation: span2 2s linear infinite;
-  animation-delay: 2s;
-}
-@keyframes span2 {
-  0% {
-    top: -70px;
-  }
-  100% {
-    top: 70px;
-  }
-}
-.button span:nth-child(3) {
-  height: 3px;
-  width: 200px;
-  right: -200px;
-  bottom: 0px;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0), #f6e58d);
-  border-top-left-radius: 1px;
-  border-bottom-left-radius: 1px;
-  animation: span3 2s linear infinite;
-  animation-delay: 3s;
-}
-@keyframes span3 {
-  0% {
-    right: -200px;
-  }
-  100% {
-    right: 200px;
-  }
-}
 
-.button span:nth-child(4) {
-  height: 70px;
-  width: 3px;
-  bottom: -70px;
-  left: 0px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), #f6e58d);
-  border-top-right-radius: 1px;
-  border-top-left-radius: 1px;
-  animation: span4 2s linear infinite;
-  animation-delay: 4s;
-}
-@keyframes span4 {
-  0% {
-    bottom: -70px;
+  .player {
+    /* transform: scaleY(-1); */
+    height: 50%;
+    padding: 5rem;
+    font-weight: bold;
   }
-  100% {
-    bottom: 70px;
-  }
-}
 
-.button:hover {
-  transition: all 0.5s;
-  transform: rotate(-3deg) scale(1.1);
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-}
-.button:hover span {
-  animation-play-state: paused;
+  .name {
+    margin-bottom: -1rem;
+  }
+
+  .score {
+    margin-bottom: 0;
+    font-size: 40px;
+  }
+
+  .player--1 {
+    transform: scaleY(-1) scaleX(-1);
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .current {
+    width: 120px;
+    padding: 0.75rem;
+  }
+  .current-score,
+  .current-label {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    display: inline;
+    padding: 5px;
+  }
+
+  button {
+    display: none;
+  }
+
+  .btn--new {
+    display: block;
+    font-size: 1.5rem;
+    transform: rotate(270deg);
+    top: 48%;
+    left: -6rem;
+  }
+
+  .btn::first-letter {
+    font-size: 2rem;
+    /* display: inline-block; */
+    margin-right: 0rem;
+  }
+
+  .btn {
+    width: 150px;
+    font-size: 1.rem;
+    padding: 1px 0px;
+    /* height: 32px; */
+  }
+
+  .btn--new:active {
+    transform: translateX(3px) rotate(270deg);
+  }
+
+  .btn--roll.player--0 {
+    display: block;
+    top: 53rem;
+  }
+  .btn--roll.player--1 {
+    display: block;
+    top: 7rem;
+    left: 25%;
+  }
+  .btn--roll.player--1:active {
+    transform: rotate(180deg) translateY(3px);
+  }
+
+  .btn--hold.player--0 {
+    display: block;
+    width: 130px;
+    top: 57rem;
+    left: 49%;
+  }
+  .btn--hold.player--1 {
+    display: block;
+    width: 130px;
+    top: 57rem;
+    left: 28%;
+    top: 3rem;
+  }
+
+  .dice {
+    width: 50px;
+    height: 50px;
+    top: 45%;
+    left: 50%;
+  }
 }
