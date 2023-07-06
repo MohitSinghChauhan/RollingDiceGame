@@ -167,7 +167,7 @@ main {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Modal Functionality */
@@ -359,7 +359,7 @@ main {
 }
 
  /* if mobile screen height is small then main take 90% height like in inphone SE */
- @media screen and (max-height: 746px) {
+ @media screen and (max-height: 746px) and (max-width: 500px) {
   main {
     height: 85%;
   }

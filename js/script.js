@@ -6,11 +6,13 @@ const player1El = document.querySelector('.player--1');
 const diceEl = document.querySelector('.dice');
 const score0El = document.getElementById('score--0');
 const score1El = document.getElementById('score--1');
-const btnRoll = document.querySelector('.btn--roll');
 const btnNew = document.querySelector('.btn--new');
-const btnHold = document.querySelector('.btn--hold');
 const current0 = document.getElementById('current--0');
 const current1 = document.getElementById('current--1');
+const btnRollPl1 = document.querySelector('.btn--roll.player--0');
+const btnRollPl2 = document.querySelector('.btn--roll.player--1');
+const btnHoldPl1 = document.querySelector('.btn--hold.player--0');
+const btnHoldPl2 = document.querySelector('.btn--hold.player--1');
 
 // Starting Conditions
 diceEl.classList.add('hidden');
@@ -26,6 +28,10 @@ const switchPlayer = function () {
   activePlayer = activePlayer === 0 ? 1 : 0;
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
+  btnRollPl1.classList.toggle('hidden');
+  btnRollPl2.classList.toggle('hidden');
+  btnHoldPl1.classList.toggle('hidden');
+  btnHoldPl2.classList.toggle('hidden');
 };
 
 // Dynamic Selecting
@@ -35,8 +41,7 @@ const currentScoreActivePlayer = document.querySelector(
 
 //Implementing Logic OF Game
 
-// 1. Rolling Dice Functionality
-btnRoll.addEventListener('click', function () {
+const roolingHandler = () => {
   if (isPlaying) {
     // Generating Random Dice Roll
     let dice = Math.trunc(Math.random() * 6) + 1;
@@ -66,10 +71,13 @@ btnRoll.addEventListener('click', function () {
     //Displaying the rolled dice image
     diceEl.src = `/assets/images/dice-${dice}.png`;
   }
-});
+};
 
-// hold button --> currentScore to global score & switching active player
-btnHold.addEventListener('click', function () {
+// 1. Rolling Dice Functionality
+btnRollPl1.addEventListener('click', roolingHandler);
+btnRollPl2.addEventListener('click', roolingHandler);
+
+const holdHandler = () => {
   if (isPlaying) {
     // add currentScore to Global score of active Player
     score[activePlayer] += currentScore;
@@ -98,7 +106,11 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
-});
+};
+
+// hold button --> currentScore to global score & switching active player
+btnHoldPl1.addEventListener('click', holdHandler);
+btnHoldPl2.addEventListener('click', holdHandler);
 
 //Resetting Global Scores & currentScores, removing winner & active class and adding active class to player one
 btnNew.addEventListener('click', function () {
@@ -118,8 +130,14 @@ btnNew.addEventListener('click', function () {
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
+
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+
+  btnRollPl1.classList.remove('hidden');
+  btnHoldPl1.classList.remove('hidden');
+  btnRollPl2.classList.add('hidden');
+  btnHoldPl2.classList.add('hidden');
 
   //setting player 1 to active and isPlaying to true
   activePlayer = 0;
