@@ -237,8 +237,9 @@ main {
   main {
     flex-direction: column-reverse;
     width: 90%;
-    height: 70%;
+    height: 80% ;
   }
+
 
   .player {
     /* transform: scaleY(-1); */
@@ -253,7 +254,7 @@ main {
 
   .score {
     margin-bottom: 0;
-    font-size: 40px;
+    font-size: 6rem;
   }
 
   .player--1 {
@@ -265,7 +266,7 @@ main {
   }
 
   .current {
-    width: 120px;
+    width: 160px;
     padding: 0.75rem;
   }
   .current-score,
@@ -276,9 +277,6 @@ main {
     padding: 5px;
   }
 
-  button {
-    display: none;
-  }
 
   .btn--new {
     position: absolute;
@@ -296,9 +294,9 @@ main {
   }
 
   .btn {
-    width: 150px;
+    width: 170px;
     font-size: 2rem;
-    padding: 1px 0px;
+    padding: 2px 0px;
     /* height: 32px; */
   }
 
@@ -322,14 +320,14 @@ main {
 
   .btn--hold.player--0 {
     display: block;
-    width: 130px;
+    width: 150px;
     top: unset;
     left: 50%;
     bottom: 4rem;
   }
   .btn--hold.player--1 {
     display: block;
-    width: 130px;
+    width: 150px;
     /* left: 50%; */
     right: 50%;
     top: 4rem;
@@ -346,5 +344,43 @@ main {
     top: calc(50%);
     transform: translateY(-25px) translateX(-50%);
     left: 50%;
+  }
+
+  html {
+    font-size: 60%;
+  }
+
+  .i-btn{
+    top: 2%;
+    left: 2%;
+    font-size: 1.75rem;
+  }
+
+}
+
+ /* if mobile screen height is small then main take 90% height like in inphone SE */
+ @media screen and (max-height: 746px) {
+  main {
+    height: 85%;
+  }
+  
+  .i-btn{
+    font-size: 1.25rem;
+    top: 1%;
+    left: 1%;
+  }
+
+  .btn--hold.player--0 {
+    bottom: 3rem;
+  }
+  .btn--hold.player--1 {
+    top: 3rem;
+  }
+
+  .btn--roll.player--0 {
+    bottom: 7rem;
+  }
+  .btn--roll.player--1 {
+    top: 7rem;
   }
 }
